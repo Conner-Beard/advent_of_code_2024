@@ -8,6 +8,14 @@ __author__ = "Conner Beard"
 def get_location_lists(file_name):
     """
     Read in the puzzle input file and extract the two location ID lists.
+
+    Args:
+        file_name (ascii text file): puzzle input, two numbers per line
+        seperated by whitespace.
+
+    Returns:
+        list_a (list of int): first location list
+        list_b (list of int): second location list
     """
     list_a = []
     list_b = []
@@ -22,6 +30,13 @@ def get_distance(list_a, list_b):
     """
     For two lists of the same length, get the numerical distance between each
     element at the same index.
+
+    Args:
+        list_a (list of int): first location list
+        list_b (list of int): second location list
+
+    Returns:
+        total_distance: summation of numerical distance between list elements
     """
     assert len(list_a) == len(list_b)
 
@@ -39,6 +54,13 @@ def get_similarity(list_a, list_b):
     """
     Get a similarity score based on the number of occurances of elements
     in list_a in list_b, multiplied by the element value.
+
+    Args:
+        list_a (list of int): first location list
+        list_b (list of int): second location list
+
+    Returns:
+        total_similarity: similarity score between list_a and list_b
     """
     assert len(list_a) == len(list_b)
 
@@ -56,6 +78,13 @@ def get_similarity(list_a, list_b):
 def solve_part_1(file_name):
     """
     Get the total "distance" between the two lists from day 1.
+
+    Args:
+        file_name (ascii text file): puzzle input, two numbers per line
+        seperated by whitespace.
+
+    Returns:
+        total_distance: summation of numerical distance between list elements
     """
     list_a, list_b = get_location_lists(file_name)
     for location_list in [list_a, list_b]:
@@ -68,6 +97,13 @@ def solve_part_1(file_name):
 def solve_part_2(file_name):
     """
     Get the total "similarity" between the two lists from day 1.
+
+    Args:
+        file_name (ascii text file): puzzle input, two numbers per line
+        seperated by whitespace.
+
+    Returns:
+        total_similarity: similarity score between list_a and list_b
     """
     list_a, list_b = get_location_lists(file_name)
     total_similarity = get_similarity(list_a, list_b)
