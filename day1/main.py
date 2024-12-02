@@ -30,7 +30,9 @@ def get_distance(list_a, list_b):
         distance = abs(list_a[index] - list_b[index])
         distances.append(distance)
 
-    return distances
+    total_distance = sum(distances)
+
+    return total_distance
 
 
 def get_similarity(list_a, list_b):
@@ -58,8 +60,7 @@ def solve_part_1(file_name):
     list_a, list_b = get_location_lists(file_name)
     for location_list in [list_a, list_b]:
         location_list.sort()
-    distances = get_distance(list_a, list_b)
-    total_distance = sum(distances)
+    total_distance = get_distance(list_a, list_b)
 
     return total_distance
 
