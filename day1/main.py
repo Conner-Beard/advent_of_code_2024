@@ -4,8 +4,10 @@ https://adventofcode.com/2024/day/1
 """
 __author__ = "Conner Beard"
 
+import os
 
-def get_location_lists(file_name):
+
+def load_location_lists(file_name):
     """
     Read in the puzzle input file and extract the two location ID lists.
 
@@ -86,7 +88,7 @@ def solve_part_1(file_name):
     Returns:
         total_distance: summation of numerical distance between list elements
     """
-    list_a, list_b = get_location_lists(file_name)
+    list_a, list_b = load_location_lists(file_name)
     for location_list in [list_a, list_b]:
         location_list.sort()
     total_distance = get_distance(list_a, list_b)
@@ -105,17 +107,20 @@ def solve_part_2(file_name):
     Returns:
         total_similarity: similarity score between list_a and list_b
     """
-    list_a, list_b = get_location_lists(file_name)
+    list_a, list_b = load_location_lists(file_name)
     total_similarity = get_similarity(list_a, list_b)
 
     return total_similarity
 
 
 if __name__ == '__main__':
-    assert solve_part_1('test_input.txt') == 11
-    total_distance = solve_part_1('input.txt')
-    print(f"Part 1 solution: {total_distance}")
+    test_input_path = os.path.dirname(__file__) + '/test_input.txt'
+    input_path = os.path.dirname(__file__) + '/input.txt'
 
-    assert solve_part_2('test_input.txt') == 31
-    total_similarity = solve_part_2('input.txt')
-    print(f"Part 2 solution: {total_similarity}")
+    assert solve_part_1(test_input_path) == 11
+    total_distance = solve_part_1(input_path)
+    print(f"Day 1 part 1 solution: {total_distance}")
+
+    assert solve_part_2(test_input_path) == 31
+    total_similarity = solve_part_2(input_path)
+    print(f"Day 1 part 2 solution: {total_similarity}")
