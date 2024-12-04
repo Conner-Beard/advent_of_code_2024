@@ -5,6 +5,7 @@ https://adventofcode.com/2024/day/4
 __author__ = "Conner Beard"
 
 import os
+import time
 from itertools import product
 
 
@@ -172,10 +173,12 @@ if __name__ == '__main__':
     test_input_path = os.path.dirname(__file__) + '/test_input.txt'
     input_path = os.path.dirname(__file__) + '/input.txt'
 
+    start = time.time()
     assert solve_part_1(test_input_path) == 18
     solution_1 = solve_part_1(input_path)
-    print(f"Day 4 part 1 solution: {solution_1}")
+    print(f"Day 4 part 1 solution: {solution_1}, time:{time.time()-start}")
 
+    start = time.time()
     assert solve_part_2(test_input_path) == 9
     solution_2 = solve_part_2(input_path)
-    print(f"Day 4 part 2 solution: {solution_2}")
+    print(f"Day 4 part 2 solution: {solution_2}, time:{time.time()-start}")
