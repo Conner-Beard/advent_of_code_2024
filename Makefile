@@ -8,4 +8,5 @@ build:
 	#python3 day7/main.py
 	#python3 day8/main.py
 	#python3 day9/main.py
-	python3 day10/main.py
+	#python3 day10/main.py
+	python3 day11/main.py
