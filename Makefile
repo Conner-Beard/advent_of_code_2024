@@ -10,4 +10,5 @@ build:
 	#python3 day9/main.py
 	#python3 day10/main.py
 	#python3 day11/main.py
-	python3 day12/main.py
+	#python3 day12/main.py
+	python3 day13/main.py
