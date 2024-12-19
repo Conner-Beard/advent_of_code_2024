@@ -6,7 +6,6 @@ __author__ = "Conner Beard"
 
 import os
 import time
-import math
 
 
 def load_puzzle_input(file_name):
@@ -18,6 +17,7 @@ def load_puzzle_input(file_name):
     Returns:
     """
     with open(file_name, 'r') as file:
+        pass
     return
 
 
@@ -27,8 +27,8 @@ def solve_part_1(file_name):
         file_name (ascii text file): puzzle input
 
     Returns:
-        the sum of middle values in the correct orders in the puzzle input
     """
+    print(load_puzzle_input(file_name))
 
 
 def solve_part_2(file_name):
@@ -37,9 +37,8 @@ def solve_part_2(file_name):
         file_name (ascii text file): puzzle input
 
     Returns:
-        the sum of middle values in the incorrect orders in the puzzle input
-        once they have been re-ordered to be correct
     """
+    print(load_puzzle_input(file_name))
 
 
 if __name__ == '__main__':
